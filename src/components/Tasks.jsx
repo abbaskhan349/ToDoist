@@ -117,28 +117,39 @@ function TodoList() {
         />
         <button type="submit">Add Todo</button>
       </form>
-      <ul>
+
+      {/* <ul>
         {todos.map((todo, index) => (
           <li key={index}>{todo.title} - {todo.description}</li>
         ))}
-      </ul>
+      </ul> */}
 
       <div className='mt-10 flex justify-between'>
          <h2>Board</h2>
          <h4>This week</h4>
-       </div>
+      </div>
 
-       <div className='mt-5 flex justify-between space-x-2'>
-         <div className='w-[300px] bg-slate-100 p-2 rounded-lg'>
-           To do
-         </div>
-         <div className='w-[300px] bg-slate-100 p-2 rounded-lg'>
-           In progress
-         </div>
-         <div className='w-[300px] bg-slate-100 p-2 rounded-lg'>
-           Done
-         </div>
-       </div>
+      <div className='mt-5 flex justify-between space-x-2'>
+        <div className='flex flex-col w-[300px] h-[600px] bg-slate-100 p-2 rounded-lg'>
+          <h2>To Do</h2>
+          {todos.map((todo, index) => (
+                <div key={index} className="flex flex-col bg-white p-4 rounded-lg">
+                  <h1 className='font-bold text-lg'>{todo.title}</h1>
+                  <p>{todo.description}</p>
+                </div>
+          ))}
+        </div>
+
+        
+        
+        
+        <div className='w-[300px] bg-slate-100 p-2 rounded-lg'>
+          In progress
+        </div>
+        <div className='w-[300px] bg-slate-100 p-2 rounded-lg'>
+          Done
+        </div>
+      </div>
     </div>
   );
 }
