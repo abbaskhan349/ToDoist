@@ -109,6 +109,7 @@ function TodoList() {
           placeholder="Todo title"
           value={currentTodo.title}
           onChange={handleChange}
+          className="mt-5"
         />
         <input
           type="text"
